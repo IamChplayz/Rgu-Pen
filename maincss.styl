@@ -1,1 +1,340 @@
+/* ==UserStyle==
+@name           RGU Pen - Alpha
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Chplayz
+@advanced dropdown betterThemeing " Better Themeing *Coming Soon* " {
+betterThemeingOff " Off " <<<EOT
+.dark-theme .avatar-container .avatar-card-image, .dark-theme .avatar-container img {
+background: var(--backgroundColor);
+}
+.dark-theme .thumbnail-2d-container {
+background: var(--transparentThemeBase) !important;
+}
+.rank-num {
+color: var(--accentColor) !important;
+}
+EOT;
+betterThemeingOn " Coming Soon " <<<EOT
+.dark-theme .avatar-container .avatar-card-image, .dark-theme .avatar-container img {
+background: var(--backgroundColor);
+}
+.dark-theme .thumbnail-2d-container {
+background: var(--transparentThemeBase) !important;
+}
+.rank-num {
+color: var(--accentColor) !important;
+}
+EOT;
+}
+@advanced dropdown darkOrLight " Theme Base " {
+darkTheme " Dark " <<<EOT
+:root {
+--transparentThemeBase: rgba(0, 0, 0, 0.35);
+--solidThemeBase: rgb(0, 0, 0)
+}
+EOT;
+lightTheme " Light " <<<EOT
+:root {
+--transparentThemeBase: rgba(255, 255, 255, 0.35);
+--solidThemeBase: rgb(255, 255, 255)
+}
+EOT;
+}
+@advanced dropdown avatarImageStatus " Avatar Image " {
+avatarImageOff " Off " <<<EOT
+EOT;
+avatarImageOn " On " <<<EOT
+#home-header > div.home-userinfo-upsell-container > div.avatar.avatar-headshot-lg.card-plain.profile-avatar-image.avatar-color > span > div > span > img {
+    padding: 50px;
+    background-image: var(--avatarImage) !important;
+    background-size: cover !important;
+    }
+    #navigation > ul > li:nth-child(1) > a > span > span > img {
+     padding: 20px;
+    background-image: var(--avatarImage) !important;
+    background-size: cover !important;   
+    }
+EOT;
+}
+@advanced text avatarImage " Avatar Image link " ""
+@advanced dropdown floatingStatus " Floating Sidebar & Topbar " {
+floatingOff " Off " <<<EOT
+EOT;
+floatingOn " On " <<<EOT
+#wrap #navigation.rbx-left-col {
+    border-radius: 10px !important;
+    min-height: 400px;
+    padding-top: 50px;
+    margin-top: var(--sidebarMargin);
+    margin-left: var(--sidebarMargin2);
+    animation-name: sidebarSwoop;
+    animation-duration: 0.8s;
+    height: var(--sidebarHeight)!important;
+    top: 40px !important;
+    left: 0px !important;
+}
+   @keyframes sidebarSwoop {
+        from {
+            margin-left: -100px;
+            opacity: 0;
+        }
+        to {
+            margin-left: var(--sidebarMargin2);
+            opacity: 1;
+        }
+    }
+.games-navigate.navigate-left {
+margin-left: 0px !important;
+}
+.games-navigate.navigate-right {
+margin-right: 0px;
+}
+#wrap #header.rbx-header {
+        border-radius: 8px !important;
+        width: calc(100% - var(--topbarWidth) * 2) !important;
+        left: var(--topbarWidth);
+        top: var(--topbarMargin);
+        box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
+        animation-name: topbarSwoop;
+        animation-duration: 0.8s;
+    }
+     @keyframes topbarSwoop {
+        from {
+            margin-top: -100px;
+            opacity: 0;
+        }
+        to {
+            margin-top: var(--topbarMargin);
+            opacity: 1;
+        }
+    }
 
+EOT;
+}
+@advanced dropdown extraFloating " Extra Floating Ui " {
+extraFloatingOff " Off " <<<EOT
+
+EOT;
+extraFloatingOn " On " <<<EOT
+#chat-header {
+bottom: 10px;
+right: 10px;
+}
+#chat-main {
+background: transparent;
+}
+.chat-container:not(.collapsed) .chat-main {
+background: var(--secondaryColor) !important;
+bottom: 10px !important;
+right: 10px !important;
+border-radius: 10px !important;
+}
+#mCSB_1 {
+height: 300px;
+}
+        #home-header > div.profile-banner.profile-banner-long > div {
+    border-radius: 14px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+#chat-main {
+    box-shadow: -2px 0px 10px 1px 
+color-mix(in srgb, rgb(255 255 255 / 0%), #00000000 20%) !important;
+}
+EOT;
+}
+@advanced dropdown roundedUi " Extra Rounded UI " {
+roundedUiOff " Off " <<<EOT
+
+EOT;
+roundedUiOn " On " <<<EOT
+#game-details-play-button-container > button {
+border-radius: 360px !important;
+}
+#game-detail-page #voting-section {
+    border-radius: 360px !important;
+}
+.fav-buttons {
+border-radius: 360px !important;
+}
+.carousel-controls.btn-primary-md {
+border-radius: 360px !important;
+}
+#home-header > div.profile-content.home-userinfo-upsell-container > div.rank-holder.rank-info-holder.rank-info-holder-long > div.rank-buttons > div.rewards-btn {
+border-radius: 360px !important;
+}
+#home-header > div.profile-content.home-userinfo-upsell-container > div.rank-holder.rank-info-holder.rank-info-holder-long > div.rank-buttons > div.leaderboard-btn {
+border-radius: 360px !important;
+}
+.quick-play:not(.quick-edit) {
+border-radius: 360px !important;
+}
+EOT;
+}
+@advanced dropdown themedAvatarEffects " Themed Avatar Effects " {
+themedAvatarEffectsOff " Off " <<<EOT
+
+EOT;
+themedAvatarEffectsOn " On " <<<EOT
+     .effect2:before, .effect2:after {
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 4.5px;
+    top: -1px;
+    background: radial-gradient(circle, var(--accentColor) 0%, var(--avatarEffectColor) 100%);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: gradientanimate 20s linear infinite;
+}
+        .effect2:before, .effect2:after {
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 4.5px;
+    top: -1px;
+    background: radial-gradient(circle, var(--accentColor) 0%, var(--avatarEffectColor) 100%);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: gradientanimate 20s linear infinite;
+}
+     .effect4 {
+    background: linear-gradient(45deg, var(--accentColor) 0%, var(--avatarEffectColor) 100%) !important;
+    }
+    .effect5 {
+        box-shadow: 0 0 10px var(--avatarEffectColor), 0 0 20px var(--avatarEffectColor), 0 0 30px var(--avatarEffectColor), 0 0 40px var(--avatarEffectColor) !important;
+        border: 3px solid 0% var(--avatarEffectColor) !important;
+    }
+    0% {
+    box-shadow: 0 0 5px var(--avatarEffectColor), 0 0 10px var(--avatarEffectColor), 0 0 15px var(--avatarEffectColor), 0 0 20px var(--avatarEffectColor);
+}
+    100% {
+    box-shadow: 0 0 5px var(--avatarEffectColor), 0 0 10px var(--avatarEffectColor), 0 0 20px var(--avatarEffectColor), 0 0 30px var(--avatarEffectColor), 0 0 35px var(--avatarEffectColor);
+}
+    .effect1 {
+    border-top: 2px dashed var(--accentColor);
+    border-right: 2px dashed var(--avatarEffectColor);
+    border-left: 2px dashed var(--transparentThemeBase) !important;
+    border-bottom: 2px dashed var(--transparentThemeBase) !important;
+    }
+       .spin {
+    z-index: 0;
+    position: absolute;
+    width: 111px;
+    height: 111px;
+    background: #ffffff00;
+    border-radius: 50%;
+    }
+    .effect3 {
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px var(--avatarEffectColor), 0 0 5px #000, inset 0 0 5px #000;
+    }
+      .effect3::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: repeating-linear-gradient( White 0%, White 7.5px, var(--avatarEffectColor) 7.5px, var(--avatarEffectColor) 15px, White 15px, White 22.5px, var(--avatarEffectColor) 22.5px, var(--avatarEffectColor) 30px);
+    transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+    animation: animate 20s linear infinite;
+    }
+    .effect6 {
+    border-radius: 50%;
+    padding: 10px;
+    left: 7px;
+    bottom: 15px;
+    animation: pulse 2s infinite;
+    border: 2px solid var(--avatarEffectColor);
+    }
+    @keyframes pulse {
+0% {
+    box-shadow: 0 0 0 0 var(--avatarEffectColor);
+}
+70% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+}
+
+100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+}
+}
+EOT;
+}
+@advanced dropdown roproSupport " Ropro Support *Coming Soon* " {
+roproSupportOff " Off " <<<EOT
+
+EOT;
+roproSupportOn " Coming Soon " <<<EOT
+:not(.nav-tiny) .left-col-list li:not([class])>a {
+height: 35px !important;
+}
+#upgrade-now-button {
+    width: 0px !important;
+    height: 0px !important;
+    background: transparent !important;
+    color: transparent !important;
+    right: 9999999px !important;
+    position: relative;
+}
+.dark-theme .btn-common-play-game-lg {
+right: 999999px !important;
+}
+EOT;
+}
+@advanced color avatarEffectMainColor " Main Avatar Effect Color " rgba(0, 0, 0, 0)
+@advanced range sidebarHeight " Floating Sidebar Height " 75
+@advanced range sidebarMargin " Floating Sidebar Top Margin (Pixels) " 65
+@advanced range sidebarMargin2 " Floating Sidebar Left Margin (Pixels) " 10
+@advanced range topbarMargin " Floating Topbar Top Margin (Pixels) " 10
+@advanced range topbarWidth " Floating Topbar Width " 10
+
+==/UserStyle== */
+
+@-moz-document domain("www.roblox.com") {
+:root{
+--avatarImage: url(/*[[avatarImage]]*/);
+--sidebarMargin: /*[[sidebarMargin]]*/px;
+--sidebarMargin2: /*[[sidebarMargin2]]*/px;
+--topbarMargin: /*[[topbarMargin]]*/px;
+--topbarWidth: /*[[topbarWidth]]*/px;
+--sidebarHeight: /*[[sidebarHeight]]*/%;
+--avatarEffectColor: /*[[avatarEffectMainColor]]*/;
+--primaryColor: var(--theme-color-primary);
+--secondaryColor: var(--theme-color-secondary);
+--accentColor: var(--theme-color-third);
+--backgroundColor: var(--theme-site-backgroundColor); 
+--backgroundImage: var(--theme-site-backgroundUrl); 
+--
+--
+--
+--
+--
+--
+--
+    }
+    /*[[avatarImageStatus]]*/
+    /*[[floatingStatus]]*/
+    /*[[darkOrLight]]*/
+    /*[[betterThemeing]]*/
+    /*[[themedAvatarEffects]]*/
+    /*[[extraFloating]]*/
+    /*[[roproSupport]]*/
+    /*[[roundedUi]]*/
+    /*[[]]*/
+    /*[[]]*/
+    .dark-theme .icon-default-placeholder, .dark-theme .icon-placeholder-asset, .dark-theme .icon-placeholder-avatar-fullbody, .dark-theme .icon-placeholder-avatar-headshot, .dark-theme .icon-placeholder-game {
+    background: transparent !important;   
+    }
+    #settings-popover-menu {
+    border-radius: 10px !important;
+    }
+
+}
