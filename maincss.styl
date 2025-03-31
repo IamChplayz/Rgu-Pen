@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           RGU Pen - Early Alpha
 @namespace      github.com/openstyles/stylus
-@version        0.0.0.1.0
+@version        0.0.0.1.5
 @description    RGU Pen is a way to enhance your Rgu theming experience and more.
 Made by former RGU Stylex dev.
 This user style is meant to pair with Rogold Ultimate, so it will bug out if you don't have it.
@@ -133,6 +133,16 @@ bottom: 10px !important;
 right: 10px !important;
 border-radius: 10px !important;
 }
+.dark-theme .dialogs .dialog-container .dialog-header {
+border-radius: 10px !important;
+}
+.dark-theme .dialogs .dialog-container .dialog-body {
+background: transparent !important;
+}
+.dialog-container.dialog-visible {
+bottom: 5px;
+border-radius: 10px !important;
+}
 #mCSB_1 {
 height: 300px;
 }
@@ -170,6 +180,9 @@ border-radius: 360px !important;
 }
 .quick-play:not(.quick-edit) {
 border-radius: 360px !important;
+}
+#rogold-badges-container .rogold-badge-item {
+border-radius: 50px !important;
 }
 EOT;
 }
@@ -348,5 +361,127 @@ EOT;
     #settings-popover-menu {
     border-radius: 10px !important;
     }
+    #rogold-badges-container .rogold-badge-item.badge-owned {
+    border: 3px solid #00b95b;
+}
+#rogold-badges-container .rogold-badge-item.badge-unowned {
+    border: 3px solid #ff6969;
+}
 
+}
+@-moz-document url-prefix("https://www.roblox.com/users/1827987975/profile") {
+    
+    :Root{
+     --profileAvatarImage: url(https://github.com/IamChplayz/images/blob/main/pfp.png?raw=true);
+     --profileAvatarEffectColor: #5d6bf8;
+     --profileAccentColor: rgba(122, 145, 204, 1);
+    }
+ #profile-header-container > div.profile-content > div.avatar > span > img {
+    padding: 50px;
+    background-image: var(--profileAvatarImage) !important;
+    background-size: cover !important;
+    }
+    #navigation > ul > li:nth-child(1) > a > span > span > img {
+     padding: 20px;
+    background-image: var(--profileAvatarImage) !important;
+    background-size: cover !important;   
+    }  
+    .effect2:before {
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    overflow: visible;
+    background: radial-gradient(circle, var(--profileAvatarEffectColor) 0%, var(--profileAccentColor) 100%) 0% 0% / 400%;
+    animation: 20s linear 0s infinite normal none running gradientanimate;
+} 
+.effect2:after {
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    overflow: visible;
+    background: radial-gradient(circle, var(--profileAvatarEffectColor) 0%, var(--profileAccentColor) 100%) 0% 0% / 400%;
+    animation: 20s linear 0s infinite normal none running gradientanimate;
+}
+.effect2 {
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    overflow: visible;
+    background: radial-gradient(circle, var(--profileAvatarEffectColor) 0%, var(--profileAccentColor) 100%) 0% 0% / 400%;
+    animation: 20s linear 0s infinite normal none running gradientanimate;
+}
+     .effect4 {
+    background: linear-gradient(45deg, var(--profileAccentColor) 0%, var(--profileAvatarEffectColor) 100%) !important;
+    }
+    .effect5 {
+        box-shadow: 0 0 10px var(--profileAvatarEffectColor), 0 0 20px var(--profileAvatarEffectColor), 0 0 30px var(--profileAvatarEffectColor), 0 0 40px var(--profileAvatarEffectColor) !important;
+        border: 3px solid 0% var(--profileAvatarEffectColor) !important;
+    }
+    0% {
+    box-shadow: 0 0 5px var(--profileAvatarEffectColor), 0 0 10px var(--profileAvatarEffectColor), 0 0 15px var(--profileAvatarEffectColor), 0 0 20px var(--profileAvatarEffectColor);
+}
+    100% {
+    box-shadow: 0 0 5px var(--profileAvatarEffectColor), 0 0 10px var(--profileAvatarEffectColor), 0 0 20px var(--profileAvatarEffectColor), 0 0 30px var(--profileAvatarEffectColor), 0 0 35px var(--profileAvatarEffectColor);
+}
+    .effect1 {
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+    background-color: transparent !important;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border-top: 3px dashed var(--profileAvatarEffectColor) !important;
+    border-right: 3px dashed var(--profileAvatarEffectColor) !important;
+    border-left: 3px dashed var(--theme-color-primary) !important;
+    border-bottom: 3px dashed var(--theme-color-primary) !important;
+    animation: 10s linear 0s infinite normal none running spin;
+}
+       .spin {
+    z-index: 0;
+    position: absolute;
+    width: 111px;
+    height: 111px;
+    background: #ffffff00;
+    border-radius: 50%;
+    }
+    .effect3 {
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px var(--avatarEffectColor), 0 0 5px #000, inset 0 0 5px #000;
+    }
+      .effect3::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: repeating-linear-gradient( White 0%, White 7.5px, var(--avatarEffectColor) 7.5px, var(--avatarEffectColor) 15px, White 15px, White 22.5px, var(--avatarEffectColor) 22.5px, var(--avatarEffectColor) 30px);
+    transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+    animation: stripe 20s linear infinite;
+    }
+    .effect6 {
+    border: 2px solid var(--avatarEffectColor);
+    }
+    @keyframes pulse {
+0% {
+    box-shadow: 0 0 0 0 var(--avatarEffectColor);
+}
+70% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+}
+
+100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+}
+    }
+    
+    
+    
+    
+    
 }
