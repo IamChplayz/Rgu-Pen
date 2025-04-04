@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name           RGU Pen - Early Alpha
-@namespace      github.com/openstyles/stylus
-@version        0.0.0.1.51
+@name           RGU Pen - Alpha
+@namespace      roblox.com While using Rogold Ultimate
+@version        0.0.1.0
 @description    RGU Pen is a way to enhance your Rgu theming experience and more.
 Made by former RGU Stylex dev.
 This user style is meant to pair with Rogold Ultimate, so it will bug out if you don't have it.
 @author         Chplayz
-@advanced dropdown betterThemeing " Better Themeing *Coming Soon* " {
+@advanced dropdown betterThemeing " Better Themeing *Early Alpha* " {
 betterThemeingOff " Off " <<<EOT
 .dark-theme .avatar-container .avatar-card-image, .dark-theme .avatar-container img {
 background: var(--backgroundColor);
@@ -14,20 +14,34 @@ background: var(--backgroundColor);
 .dark-theme .thumbnail-2d-container {
 background: var(--transparentThemeBase) !important;
 }
+#profile-header-dropdown-menu > div.MuiPaper-root.MuiMenu-paper.web-blox-css-tss-nkarex-Menu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.web-blox-css-mui-hjn929 {
+background: var(--accentColor) !important;
+}
+
+EOT;
+betterThemingOn " On *Early Alpha* " <<<EOT
 .rank-num {
 color: var(--accentColor) !important;
 }
-EOT;
-betterThemeingOn " Coming Soon " <<<EOT
+.rank-num {
+color: var(--accentColor) !important;
+}
 .dark-theme .avatar-container .avatar-card-image, .dark-theme .avatar-container img {
 background: var(--backgroundColor);
 }
 .dark-theme .thumbnail-2d-container {
 background: var(--transparentThemeBase) !important;
 }
-.rank-num {
-color: var(--accentColor) !important;
+.creator-preview {
+background: var(--primaryColor) !important;
+box-shadow: 0 0 10px var(--primaryColor, var(--third));
 }
+#profile-header-dropdown-menu > div.MuiPaper-root.MuiMenu-paper.web-blox-css-tss-nkarex-Menu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.web-blox-css-mui-hjn929 {
+background: var(--primaryColor) !important;
+}
+
+
+
 EOT;
 }
 @advanced dropdown darkOrLight " Theme Base " {
@@ -187,7 +201,25 @@ border-radius: 360px !important;
 .quick-play:not(.quick-edit) {
 border-radius: 360px !important;
 }
+#rogold-badges-container .badge-filter-controls {
+border-radius: 25px !important;
+}
 #rogold-badges-container .rogold-badge-item {
+border-radius: 50px !important;
+}
+#rogold-badges-container .badge-search input {
+border-radius: 50px !important;
+}
+#rogold-badges-container .badge-filter-dropdown select {
+border-radius: 50px !important;
+}
+#rogold-badges-container .badge-sort-toggle button, #rogold-badges-container .badge-view-toggle button {
+border-radius: 50px !important;
+}
+#rogold-badges-container .badge-pagination .pagination-button {
+border-radius: 50px !important;
+}
+#rogold-badges-container .badge-pagination .pagination-info {
 border-radius: 50px !important;
 }
 EOT;
@@ -292,11 +324,150 @@ themedAvatarEffectsOn " On " <<<EOT
 }
 EOT;
 }
-@advanced dropdown roproSupport " Ropro Support *Coming Soon* " {
+@advanced dropdown roproSupport " Ropro Support *Alpha* " {
 roproSupportOff " Off " <<<EOT
 
 EOT;
-roproSupportOn " Coming Soon " <<<EOT
+roproSupportOn " On *Alpha* " <<<EOT
+
+
+@-moz-document url-prefix("https://www.roblox.com/home") {
+    
+}
+
+@-moz-document url-prefix("https://www.roblox.com/games/") {
+    #game-details-play-button-container > button.btn-full-width.btn-common-play-game-lg.btn-primary-md.btn-min-width.random-server-button {
+    width: 40px !important;
+    margin-left: 3px !important;
+    position: relative !important;
+    min-width: 0px !important;
+    padding: 0px !important;
+    }
+    #game-details-play-button-container > button.btn-full-width.btn-common-play-game-lg.btn-primary-md.btn-min-width.random-server-button > span {
+     filter: invert(1) !important;
+    background-image: url(chrome-extension://adbacgifemdbhdkfppmeilbgppmhaobf/images/random_server.svg) !important;
+    background-size: cover !important;
+    position: relative !important;
+    right: 6px !important;   
+    }
+    #game-detail-page > div.col-xs-12.section-content.game-main-content.remove-panel.follow-button-enabled > div.game-calls-to-action > div.game-title-container > div:nth-child(6) > div > img {
+    content: url("https://s3-eu-west-1.amazonaws.com/tpd/logos/5ff8dfbbc6cde80001448fea/0x0.png") !important;
+    width: 20px !important;
+    height: 20px !important;
+    }
+    #game-detail-page > div.col-xs-12.section-content.game-main-content.remove-panel.follow-button-enabled > div.game-calls-to-action > div.game-title-container > div:nth-child(6) > div {
+    color: transparent !important;
+    right: 43px;   
+    Position: relative !important;
+    }
+    #playTimeText {
+    color: var(--theme-typography-secondary-color, var(--text-secondary)) !important;   
+    }
+    .input-dropdown-btn:not(#popover-link), .rbx-select {
+    background: transparent !important;   
+    }
+    #timeOptions {
+     border-radius: 14px;
+    background: var(--primaryColor) !important;   
+    }
+    .input-dropdown-btn .rbx-selection-label {
+    color: var(--theme-typography-secondary-color, var(--text-secondary)) !important;
+    }
+    #timeDropdown > button {
+    right: 100px !important;
+    position: relative !important;   
+    }
+    #game-details-play-button-container > button.btn-full-width.btn-common-play-game-lg.btn-primary-md.btn-min-width.random-server-button > div {
+     background: var(--primaryColor) !important;   
+    }
+    #game-detail-page > div:nth-child(6) > iframe {
+    top: 55px !important;
+    height: 3375px !important;
+    border-radius: 14px !important;   
+    }
+    #roproServerFiltersMiniButton {
+    background: transparent !important;
+    right: 120px !important;
+    border: transparent !important;   
+    }
+    #serverFiltersDropdownBoxMini {
+    background: var(--primaryColor) !important;   
+    }
+    .server-filter-option {
+    background: var(--secondaryColor) !important;   
+    }
+    .dark-theme #playerCountSelector {
+    background: var(--primaryColor) !important;
+    }
+    .dark-theme #maxPlayersListMini {
+    background: var(--secondaryColor) !important;   
+    }
+    
+    .dark-theme .max-players-selection {
+    background: var(--accentColor) !important;   
+    }
+    #maxPlayersButtonMini > div.filter-tooltip {
+    background: var(--primaryColor) !important;   
+    }
+    #reverseOrderButtonMini > div {
+    background: var(--primaryColor) !important;   
+    }
+    #notFullButtonMini > div {
+    background: var(--primaryColor) !important;   
+    }
+    #randomShuffleButtonMini > div {
+    background: var(--primaryColor) !important;   
+    }
+    #serverRegionButtonMini > div.filter-tooltip {
+    background: var(--primaryColor) !important;   
+    }
+    #bestConnectionButtonMini > div {
+    background: var(--primaryColor) !important;   
+    }
+    #newestServersButtonMini > div {
+    background: var(--primaryColor) !important;   
+    }
+    #oldestServersButtonMini > div{
+    background: var(--primaryColor) !important;   
+    }
+    #serverRegionButtonMini:hover #serverRegionSelector {
+    background: var(--primaryColor) !important;   
+    }
+}
+
+@-moz-document url-prefix("https://www.roblox.com/users/") {
+    #wrap::before {
+    content: "";
+    width: 100%;
+    height: 101%;
+    position: fixed;
+    background: transparent !important;
+    background-repeat: repeat !important;
+}
+   .dark-theme {
+    content: "";
+    width: 100%;
+    height: 101%;
+    background: transparent !important;
+    background-image: var(--theme-site-backgroundUrl, var(--theme-site-backgroundColor, var(--theme-color-secondary, var(--background)))) !important;
+    background-repeat: repeat !important;
+    background-size: var(--theme-site-backgroundImageSize) !important;
+    background-blend-mode: var(--theme-site-backgroundBlendMode) !important;
+    filter: blur(var(--theme-site-backgroundBlur)) !important;
+    }
+    #roproThemeFrame {
+    left: 0 !important;
+    top: -45px !important;
+    position: absolute !important;
+    border: 0 !important;
+    width: 100% !important;
+    height: 109% !important;
+    z-index: -1 !important;
+    }
+
+    
+}
+
 :not(.nav-tiny) .left-col-list li:not([class])>a {
 height: 35px !important;
 }
@@ -308,11 +479,56 @@ height: 35px !important;
     right: 9999999px !important;
     position: relative;
 }
-.dark-theme .btn-common-play-game-lg {
-right: 999999px !important;
+     span > div.ropro-card-quick-play-options.animate > a:nth-child(1) > button {
+position: relative !important;
+left: 9999999px !important;
+}
+      span > div.ropro-card-quick-play-options.animate > a:nth-child(2) > button {
+position: relative !important;
+left: 9999999px !important;
 }
 EOT;
 }
+@advanced dropdown roproTheme " Use Ropro Theme *Alpha* " {
+roproThemeOff " Off " <<<EOT
+
+EOT;
+roproThemeOn " On " <<<EOT
+ #wrap::before {
+    content: "";
+    width: 100%;
+    height: 101%;
+    position: fixed;
+    background: transparent !important;
+    background-repeat: repeat !important;
+}
+   .dark-theme {
+    content: "";
+    width: 100%;
+    height: 101%;
+    background: transparent ;
+    background-image: var(--theme-site-backgroundUrl, var(--theme-site-backgroundColor, var(--theme-color-secondary, var(--background)))) !important;
+    background-repeat: repeat !important;
+    background-size: var(--theme-site-backgroundImageSize) !important;
+    background-blend-mode: var(--theme-site-backgroundBlendMode) !important;
+    filter: blur(var(--theme-site-backgroundBlur)) !important;
+    }
+    #roproThemeFrame {
+    left: 0 !important;
+    top: -45px !important;
+    position: absolute !important;
+    border: 0 !important;
+    width: 100% !important;
+    height: 109% !important;
+    z-index: -1 !important;
+    }
+
+
+EOT;
+
+}
+
+
 @advanced color avatarEffectMainColor " Main Avatar Effect Color " rgba(0, 0, 0, 0)
 @advanced range sidebarHeight " Floating Sidebar Height " 75
 @advanced range sidebarMargin " Floating Sidebar Top Margin (Pixels) " 65
@@ -361,6 +577,7 @@ EOT;
     /*[[roproSupport]]*/
     /*[[roundedUi]]*/
     /*[[hideEvents]]*/
+    /*[[roproTheme]]*/
     .dark-theme .icon-default-placeholder, .dark-theme .icon-placeholder-asset, .dark-theme .icon-placeholder-avatar-fullbody, .dark-theme .icon-placeholder-avatar-headshot, .dark-theme .icon-placeholder-game {
     background: transparent !important;   
     }
@@ -373,8 +590,13 @@ EOT;
 #rogold-badges-container .rogold-badge-item.badge-unowned {
     border: 3px solid #ff6969;
 }
+    #react-user-account-base > div.section > img {
+    content: url(https://github.com/IamChplayz/Rgu-Pen/blob/main/Images/ultimate_hub%20X%20RGU%20Penpng.png?raw=true) !important;
+    }
 
 }
+
+
 @-moz-document url-prefix("https://www.roblox.com/users/1827987975/profile") {
     
     :Root{
@@ -491,3 +713,6 @@ EOT;
     
     
 }
+
+ /*[[roproSupport]]*/
+
