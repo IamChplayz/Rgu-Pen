@@ -5,7 +5,7 @@ I used to be the secondary developer of RGU Stylex, but it got discontinued, so 
 Discord Server - https://discord.gg/curD8ZxCJc                   Roblox Profile - https://www.roblox.com/users/1827987975/profile
 
 
-# Features                                                                                                                 e
+# Features                                                                                                                                                                                                                                                                                                     # e
 -Ropro support Alpha
 
 -Better theming Early Alpha
