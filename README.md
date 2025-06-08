@@ -6,3 +6,12 @@ Discord Server - https://discord.gg/curD8ZxCJc                   Roblox Profile 
 
 
 # Features
+Ropro support Alpha
+Better theming Early Alpha
+Custom avatar Image (Local)
+Customizable floating topbar & sidebar
+Extra floating UI
+Extra Rounded UI
+Themed avatar effects
+Hide Events On Sidebar
+And more small things
