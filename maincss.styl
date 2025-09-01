@@ -1,36 +1,245 @@
 /* ==UserStyle==
-@name           RGU Pen - Alpha
-@namespace      roblox.com While using Rogold Ultimate
-@version        0.0.1.0
-@description    RGU Pen is a way to enhance your Rgu theming experience and more.
-Made by former RGU Stylex dev.
-This user style is meant to pair with Rogold Ultimate, so it will bug out if you don't have it.
-@author         Chplayz
-@advanced dropdown betterThemeing " Better Themeing *Early Alpha* " {
-betterThemeingOff " Off " <<<EOT
-.dark-theme .avatar-container .avatar-card-image, .dark-theme .avatar-container img {
-background: var(--backgroundColor);
-}
-.dark-theme .thumbnail-2d-container {
-background: var(--transparentThemeBase) !important;
-}
-#profile-header-dropdown-menu > div.MuiPaper-root.MuiMenu-paper.web-blox-css-tss-nkarex-Menu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.web-blox-css-mui-hjn929 {
-background: var(--accentColor) !important;
-}
+@name           RGU Pen - Beta
+@namespace      github.com/openstyles/stylus
+@version        0.1.1.0
+@description    A new userstyle
+@author         Me
+@homepageURL https://github.com/IamChplayz/Rgu-Pen
+@supportURL https://github.com/IamChplayz/Rgu-Pen/blob/main/README.md
+@preprocessor   stylus
+@var checkbox generalTweaks " General Tweaks " 1
+@var checkbox betterThemeing "Better Themeing *Early Alpha*" 0
+@var checkbox darkOrLight " Dark Or Light Theme Base " 0
+@var checkbox avatarImageStatus "Avatar Image" 0
+@var text avatarImage "Avatar Image Link *put quotation marks around link*" Put '' around link
+@var checkbox betterHomePage " Better HomePage *Coming Soon* " 0
+@var checkbox betterGamePage " Better GamePage *Alpha* " 0
+@var checkbox betterProfilePage " Better ProfilePage *Coming Soon* " 0
+@var checkbox betterCatalog " Better Catalog *Alpha* " 1
+@var checkbox betterConnectionPage " Better ConnectionPage *Coming Soon* " 0
+@var checkbox betterAvatarPage " Better AvatarPage *Coming Soon* " 0
+@var checkbox betterThemePage " Better ThemePage *Coming Soon* " 0
+@var checkbox floatingStatus "Floating Sidebar & Topbar" 0
+@var checkbox extraFloating "Extra Floating Ui" 0
+@var checkbox roundedUi "Extra Rounded UI" 0
+@var checkbox themedAvatarEffects "Themed Avatar Effects" 0
+@var checkbox compactGames "Compact Homepage Games" 0
+@var checkbox roproSupport "Ropro Support *Alpha*" 0
+@var checkbox roproTheme " Use Ropro Theme *Alpha* " 0
+@advanced color avatarEffectMainColor "Main Avatar Effect Color" rgba(200, 200, 200, 100)
+@advanced range sidebarHeight "Floating Sidebar Height" 75
+@advanced range sidebarMargin "Floating Sidebar Top Margin (Pixels)" 65
+@advanced range sidebarMargin2 "Floating Sidebar Left Margin (Pixels)" 10
+@advanced range topbarMargin "Floating Topbar Top Margin (Pixels)" 10
+@advanced range topbarWidth "Floating Topbar Width" 10
+@advanced checkbox hideEvents "Hide Events On Sidebar" 0
 
-EOT;
-betterThemingOn " On *Early Alpha* " <<<EOT
-.rank-num {
+
+==/UserStyle== */
+
+@-moz-document domain("www.roblox.com") {  
+    :root {
+--sidebarMargin: sidebarMargin * 1px;
+--sidebarMargin2: sidebarMargin2 * 1px;
+--topbarMargin: topbarMargin * 1px;
+--topbarWidth: topbarWidth * 1px;
+--sidebarHeight: sidebarHeight * 1%;   
+--avatarEffectColor: avatarEffectMainColor;
+--primaryColor: var(--theme-color-primary, #191b1d);
+--secondaryColor: var(--theme-color-secondary, #232527);
+--accentColor: var(--theme-color-third, #333536);
+--backgroundColor: var(--theme-site-backgroundColor, #232527); 
+--backgroundImage: var(--theme-site-backgroundUrl); 
+--avatarBackgroundColor: var(--backgroundColor);
+--v1: (topbarWidth + 10) * 1px;
+  }
+
+  if generalTweaks {
+   .dark-theme .icon-default-placeholder, .dark-theme .icon-placeholder-asset, .dark-theme .icon-placeholder-avatar-fullbody, .dark-theme .icon-placeholder-avatar-headshot, .dark-theme .icon-placeholder-game {
+    background: transparent !important;   
+    }
+    
+   .large-game-page .home-header-long .profile-banner {
+    top: -47px;
+    height: 350px !important;
+    border-radius: 0px !important;
+    left: -5px !important;
+    width: 101% !important;
+  }
+
+   #friends-tab-content > div.pagination-buttons > button {
+    height: 40px;
+    width: 40px;
+  }
+
+   #settings-popover-menu {
+    border-radius: 10px !important;
+  }
+
+   #rogold-badges-container .rogold-badge-item.badge-owned {
+    border: 3px solid #00b95b;
+  }
+
+   #rogold-badges-container .rogold-badge-item.badge-unowned {
+    border: 3px solid #ff6969;
+  }
+
+  #react-user-account-base > div.section > img {
+    content: url(https://github.com/IamChplayz/Rgu-Pen/blob/main/Images/ultimate_hub%20X%20RGU%20Penpng.png?raw=true) !important;
+  }
+
+   .effect-2::before {
+    left: 50% !important;
+    top: 50% !important;
+    height: 110% !important;
+    width: 110% !important;
+    position: absolute;
+    filter: blur(0);
+  }   
+  #discover-categories>.section>.game-list>.game-entry .game-details .play-btn, .discover-categories>.section>.game-list>.game-entry .game-details .play-btn {
+   background: var(--theme-buttons-default-shadow, #00b95b) !important;   
+  }
+  .messages .messageDivider.unread {
+   background: var(--secondaryColor) !important;   
+  }
+  .messages .messageDivider {
+   background: var(--primaryColor) !important;
+  }
+  }
+  if betterCatalog == 1 {
+   .dark-theme #catalog-react-container .sticky .catalog-header, .light-theme #catalog-react-container .sticky .catalog-header {
+   background: transparent !important;   
+  }
+  #catalog-content > div.catalog-header > div.catalog-heading-container {
+   background: var(--primaryColor) !important;
+    border-radius: 12px;   
+  }
+  #catalog-content > div.catalog-header > div.catalog-heading-container > div.topic-container {
+   background: transparent !important;   
+  }
+  .dark-theme .hover-game-tile.contained-tile .featured-game-container .game-card-link .info-container {
+   height: 95px !important;   
+  }
+  #catalog-react-container .catalog-revamp .catalog-item-container img {
+   background: var(--primaryColor) !important;   
+  }
+  .dark-theme #catalog-react-container .catalog-revamp .catalog-item-container .item-card-thumb-container {
+   background: transparent !important;   
+  }
+  #catalog-content > div.catalog-header > div.catalog-heading-container {
+   bottom: 70px;
+    position: relative;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .3);
+    margin-left: var(--v1)  !important;
+    margin-right: var(--topbarWidth) !important;
+    margin-top: var(--topbarMargin) !important;
+    height: 165px !important;
+  }
+  #catalog-content > div.catalog-header > div.search-bars.search-bar-placement-right {
+    top: (90 + topbarMargin) * 1px;
+    width: 99%;
+    left: (10 + topbarWidth) * 1px;
+    position: relative;
+    margin-top: var(--topbarMargin) !important; 
+  }
+  #results > ul {
+   margin-left: 5px !important;
+  }
+  .css-igs3ac {
+     border: transparent !important;   
+    }
+    .layer {
+     background: transparent !important;
+    }   
+  }
+  if compactGames {
+  if roundedUi == 0 {
+   .view-servers-btn {
+    border-radius: 5px !important;   
+   }
+  }
+  if roundedUi == 1 {
+   .view-servers-btn {
+    border-radius: 360px !important;   
+   }
+}
+   .dark-theme .game-card-info {
+   bottom: 130px;   
+   left: 5px;
+   text-shadow: 2px 2px 4px #000000;
+  }
+  .dark-theme .game-card-container .game-card-name {
+   bottom: 120px !important;  
+   text-shadow: 2px 2px 4px #000000;
+  }
+  .hlist.game-cards:not(:has(.game-card-name-secondary)) .game-card-container:not(:has(.brief-game-icon)) .game-name-title, .hlist.game-cards:not(:has(.game-card-name-secondary)) .game-card.game-tile .game-name-title, .game-carousel .game-card-container:not(:has(.brief-game-icon)) .game-name-title, .game-carousel .game-card.game-tile .game-name-title, .game-grid .game-card-container:not(:has(.brief-game-icon)) .game-name-title, .game-grid .game-card.game-tile .game-name-title {
+   left: 5px !important;
+   width: 115px !important;   
+  }
+   div.quick-play {
+   bottom: 40px;
+    position: relative !important;   
+  }
+  .view-servers-btn {
+   left: 45px;
+    width: 80px;
+    height: 25px;
+    bottom: 6px;
+    background: var(--theme-buttons-confirm-background, #00b95b); 
+    text-indent: -9999px;
+  line-height: 0 !important; /* Collapse the original line */
+  }
+  .view-servers-btn:after {
+   content: "Servers";
+  text-indent: 0;
+  display: block;
+  line-height: initial; /* New content takes up original line height */   
+  }
+  .game-carousel, .hlist.game-cards:not(.group-list):not(:has(.game-card-name-secondary)), .badge-list {
+   height: 140px !important;   
+  }
+  .power-search-private-server .quick-play {
+   bottom: 0px !important;
+  }
+  .power-search .power-search-results>.power-search-game .quick-play {
+   bottom: 0px !important;   
+  }
+  #discover-top .friend-activity>.activity-list>.activity-item>.quick-play {
+   bottom: 0px !important;   
+  }
+  #discover-top .most-played>.activity-list>.activity-item>.quick-play {
+   bottom: 0px !important;   
+  }
+  .dark-theme #catalog-react-container .catalog-revamp .filters-modal-container {
+   background: var(--primaryColor) !important;   
+   border: transparent !important;
+  }
+  .dark-theme #catalog-react-container .catalog-revamp .filters-modal-container .filter-options-container {
+   background: transparent !important;
+   border: transparent !important;
+  }
+  .dark-theme input, .dark-theme textarea {
+   border: transparent !important;
+  }
+  #item-details-container > item-details > div {
+   background: transparent !important;   
+  }
+  }
+  
+  if betterThemeing == 0 {
+   #profile-header-dropdown-menu > div.MuiPaper-root.MuiMenu-paper.web-blox-css-tss-nkarex-Menu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.web-blox-css-mui-hjn929 {
+background: var(--accentColor) !important;
+   }  
+   #discover-categories>.section>.game-list>.game-entry:hover>.game-basic-info, .discover-categories>.section>.game-list>.game-entry:hover>.game-basic-info {
+background: var(--accentColor) !important;   
+}
+  }
+  if betterThemeing == 1 {
+   .rank-num {
 color: var(--accentColor) !important;
 }
 .rank-num {
 color: var(--accentColor) !important;
-}
-.dark-theme .avatar-container .avatar-card-image, .dark-theme .avatar-container img {
-background: var(--backgroundColor);
-}
-.dark-theme .thumbnail-2d-container {
-background: var(--transparentThemeBase) !important;
 }
 .creator-preview {
 background: var(--primaryColor) !important;
@@ -38,55 +247,79 @@ box-shadow: 0 0 10px var(--primaryColor, var(--third));
 }
 #profile-header-dropdown-menu > div.MuiPaper-root.MuiMenu-paper.web-blox-css-tss-nkarex-Menu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.web-blox-css-mui-hjn929 {
 background: var(--primaryColor) !important;
+}    
+#discover-categories>.section>.game-list>.game-entry:hover>.game-basic-info, .discover-categories>.section>.game-list>.game-entry:hover>.game-basic-info {
+background: var(--accentColor) !important;   
 }
-
-
-
-EOT;
+.collapsible-heading .collapsible-tab+div:not(.hidden) {
+background: var(--theme-color-primary, var(--third)) !important;   
 }
-@advanced dropdown darkOrLight " Theme Base " {
-darkTheme " Dark " <<<EOT
-:root {
---transparentThemeBase: rgba(0, 0, 0, 0.35);
---solidThemeBase: rgb(0, 0, 0)
-}
-EOT;
-lightTheme " Light " <<<EOT
-:root {
---transparentThemeBase: rgba(255, 255, 255, 0.35);
---solidThemeBase: rgb(255, 255, 255)
-}
-EOT;
-}
-@advanced dropdown avatarImageStatus " Avatar Image " {
-avatarImageOff " Off " <<<EOT
-EOT;
-avatarImageOn " On " <<<EOT
-#home-header > div.home-userinfo-upsell-container > div.avatar.avatar-headshot-lg.card-plain.profile-avatar-image.avatar-color > span > div > span > img {
-    padding: 50px;
-    background-image: var(--avatarImage) !important;
-    background-size: cover !important;
+  }
+  
+  if darkOrLight == 0 {
+   .avatar .avatar-image {
+    background: var(--backgroundColor) !important;
+    }    
+    #discover-top .friend-activity>.activity-list>.activity-item .activity-user-image:not(img) {
+     background: var(--backgroundColor) !important;
+ }
+ if betterCatalog == 1 {
+ .dark-theme .item-details-thumbnail-container .thumbnail-holder {
+     background-color: rgba(0, 0, 0, .5);   
     }
+}
+  }
+  if darkOrLight == 1 {
+   .avatar .avatar-image img {
+    filter: brightness(0.775) !important;   
+    }
+    .avatar .avatar-image {
+    filter: brightness(1.3) !important;
+    background: var(--backgroundColor) !important;
+    }   
+    #discover-top .friend-activity>.activity-list>.activity-item .activity-user-image {
+     filter: brightness(0.775) !important;  
+    }
+    #discover-top .friend-activity>.activity-list>.activity-item .activity-user-image:not(img) {
+     background: var(--backgroundColor) !important;
+     filter: brightness(1.3) !important;
+    }
+    if betterCatalog == 1 {
+    .dark-theme .item-details-thumbnail-container .thumbnail-holder {
+     background-color: rgba(255, 255, 255, .5);   
+    }
+}
+  }
+
+ 
+  if avatarImageStatus {
+    #rg-user-header > div.profile-content.home-userinfo-upsell-container > div.avatar > span.thumbnail-2d-container.avatar-image > img {
+      padding: 52px;
+      background-image: url(avatarImage) !important;
+      background-size: cover !important;
+    }
+
     #navigation > ul > li:nth-child(1) > a > span > span > img {
-     padding: 20px;
-    background-image: var(--avatarImage) !important;
-    background-size: cover !important;   
+      padding: 20px;
+      background-image: url(avatarImage) !important;
+      background-size: cover !important;
     }
-EOT;
-}
-@advanced text avatarImage " Avatar Image link " ""
-@advanced dropdown floatingStatus " Floating Sidebar & Topbar " {
-floatingOff " Off " <<<EOT
-EOT;
-floatingOn " On " <<<EOT
-#wrap #navigation.rbx-left-col {
+
+    .av-holder img:not(.avatar-image) {
+      padding: 40px;
+      background-image: url(avatarImage) !important;
+      background-size: cover !important;
+    }    
+  }
+  if floatingStatus {
+     #wrap #navigation.rbx-left-col {
     border-radius: 10px !important;
     min-height: 400px;
     padding-top: 50px;
     margin-top: var(--sidebarMargin);
     margin-left: var(--sidebarMargin2);
     animation-name: sidebarSwoop;
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     height: var(--sidebarHeight)!important;
     top: 40px !important;
     left: 0px !important;
@@ -114,7 +347,7 @@ margin-right: 0px;
         top: var(--topbarMargin);
         box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
         animation-name: topbarSwoop;
-        animation-duration: 0.8s;
+        animation-duration: 1s;
     }
      @keyframes topbarSwoop {
         from {
@@ -126,26 +359,50 @@ margin-right: 0px;
             opacity: 1;
         }
     }
-
-EOT;
-}
-@advanced dropdown extraFloating " Extra Floating Ui " {
-extraFloatingOff " Off " <<<EOT
-
-EOT;
-extraFloatingOn " On " <<<EOT
-#chat-header {
-bottom: 10px;
-right: 10px;
+    .container-footer {
+     width: calc(100% - 20px) !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    border-radius: 14px !important;   
+    }
+  }
+  if extraFloating {
+  #chat-header {
+    bottom: 13%;
+    right: 3%;
 }
 #chat-main {
 background: transparent;
 }
 .chat-container:not(.collapsed) .chat-main {
-background: var(--secondaryColor) !important;
+background: var(--primaryColor) !important;
 bottom: 10px !important;
 right: 10px !important;
-border-radius: 10px !important;
+border-radius: 14px !important;
+}
+.chat-header {
+background: var(--primaryColor) !important;   
+}
+.dark-theme .chat-container .chat-main .chat-header {
+background: var(--primaryColor) !important;   
+}
+@keyframes chatSwoop {
+from {
+margin-bottom: -100px
+opacity: 0;
+}
+to {
+margin-bottom: 0px;
+opacity: 1;
+}
+    
+}
+#chat-header {
+border-radius: 14px !important;   
+}
+#chat-main {
+animation-name: chatSwoop;
+animation-duration: 1s; 
 }
 .dark-theme .dialogs .dialog-container .dialog-header {
 border-radius: 10px !important;
@@ -160,30 +417,27 @@ border-radius: 10px !important;
 #mCSB_1 {
 height: 300px;
 }
-        #home-header > div.profile-banner.profile-banner-long > div {
-    border-radius: 14px !important;
-    position: absolute !important;
-    top: 5px !important;
-    right: 5px !important;
-}
-#home-header .profile-banner .badges-holder, #profile-header-container .profile-banner .badges-holder {
+
+#rg-user-header > div.profile-banner.profile-banner-long > div {
    border-radius: 14px !important;
     position: absolute !important;
     top: 5px !important;
     right: 5px !important;
 }
 #chat-main {
-    box-shadow: -2px 0px 10px 1px 
-color-mix(in srgb, rgb(255 255 255 / 0%), #00000000 20%) !important;
-}
-EOT;
-}
-@advanced dropdown roundedUi " Extra Rounded UI " {
-roundedUiOff " Off " <<<EOT
-
-EOT;
-roundedUiOn " On " <<<EOT
-#game-details-play-button-container > button {
+    box-shadow: 0px 0px 0px 0px !important;
+   }
+   #chat-header {
+    top: 0px !important;
+    right: 0px !important;   
+   }
+   #chat-main {
+    right: 10px;
+    bottom: 10px;
+   }
+  }
+  if roundedUi {
+   #game-details-play-button-container > button {
 border-radius: 360px !important;
 }
 #game-detail-page #voting-section {
@@ -222,47 +476,48 @@ border-radius: 50px !important;
 #rogold-badges-container .badge-pagination .pagination-info {
 border-radius: 50px !important;
 }
-EOT;
+.dark-theme .btn-control-md {
+border-radius: 360px !important;
 }
-@advanced dropdown themedAvatarEffects " Themed Avatar Effects " {
-themedAvatarEffectsOff " Off " <<<EOT
-
-EOT;
-themedAvatarEffectsOn " On " <<<EOT
-    .effect2:before {
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    overflow: visible;
-    background: radial-gradient(circle, var(--avatarEffectColor) 0%, var(--accentColor) 100%) 0% 0% / 400%;
-    animation: 20s linear 0s infinite normal none running gradientanimate;
-} 
-.effect2:after {
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    overflow: visible;
-    background: radial-gradient(circle, var(--avatarEffectColor) 0%, var(--accentColor) 100%) 0% 0% / 400%;
-    animation: 20s linear 0s infinite normal none running gradientanimate;
+.dark-theme .btn-primary-md {
+border-radius: 360px !important;
+   }   
+   .dark-theme .btn-alert-md {
+    border-radius: 360px !important;  
+   }
+   .dark-theme .btn-cta-md {
+    border-radius: 360px !important;   
+   }
+   .dark-theme .input-field {
+    border-radius: 360px !important;
+   }
+   .dark-theme .btn-secondary-md {
+    border-radius: 360px !important;   
+   }
+   #discover-top .friend-activity>.activity-list>.activity-item .activity-user-image {
+   border-radius: 360px !important;   
+  }
+  #discover-top .friend-activity>.activity-list>.activity-item {
+   border-radius: 360px !important;   
+  }
+  div.play-btn {
+   border-radius: 360px !important;   
+  }
+  .games-navigate {
+   border-radius: 360px !important;   
+  }
+  #game-detail-page > div.col-xs-12.section-content.game-main-content.remove-panel.follow-button-enabled > div.game-calls-to-action > div.game-buttons-container > div > div.rgu-random-server-container > button {
+    border-radius: 360px !important;
+  }
+  }
+  if themedAvatarEffects {
+   .effect-2::before {
+         background: radial-gradient(circle, var(--primaryColor) 0%, var(--avatarEffectColor) 50%, var(--accentColor) 100%) 0% 0% / 400%;
 }
-.effect2 {
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    overflow: visible;
-    background: radial-gradient(circle, var(--avatarEffectColor) 0%, var(--accentColor) 100%) 0% 0% / 400%;
-    animation: 20s linear 0s infinite normal none running gradientanimate;
-}
-     .effect4 {
+     .effect-4::before {
     background: linear-gradient(45deg, var(--accentColor) 0%, var(--avatarEffectColor) 100%) !important;
     }
-    .effect5 {
+    .effect-5::before {
         box-shadow: 0 0 10px var(--avatarEffectColor), 0 0 20px var(--avatarEffectColor), 0 0 30px var(--avatarEffectColor), 0 0 40px var(--avatarEffectColor) !important;
         border: 3px solid 0% var(--avatarEffectColor) !important;
     }
@@ -272,7 +527,7 @@ themedAvatarEffectsOn " On " <<<EOT
     100% {
     box-shadow: 0 0 5px var(--avatarEffectColor), 0 0 10px var(--avatarEffectColor), 0 0 20px var(--avatarEffectColor), 0 0 30px var(--avatarEffectColor), 0 0 35px var(--avatarEffectColor);
 }
-    .effect1 {
+    .effect-1::before {
     animation-timeline: auto;
     animation-range-start: normal;
     animation-range-end: normal;
@@ -281,8 +536,8 @@ themedAvatarEffectsOn " On " <<<EOT
     height: calc(100% + 8px);
     border-top: 3px dashed var(--avatarEffectColor) !important;
     border-right: 3px dashed var(--avatarEffectColor) !important;
-    border-left: 3px dashed var(--theme-color-primary) !important;
-    border-bottom: 3px dashed var(--theme-color-primary) !important;
+    border-left: 3px dashed var(--accentColor) !important;
+    border-bottom: 3px dashed var(--accentColor) !important;
     animation: 10s linear 0s infinite normal none running spin;
 }
        .spin {
@@ -293,19 +548,9 @@ themedAvatarEffectsOn " On " <<<EOT
     background: #ffffff00;
     border-radius: 50%;
     }
-    .effect3 {
-    overflow: hidden;
-    box-sizing: border-box;
-    box-shadow: 0 0 2px var(--avatarEffectColor), 0 0 5px #000, inset 0 0 5px #000;
-    }
-      .effect3::before {
-    content: "";
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: repeating-linear-gradient( White 0%, White 7.5px, var(--avatarEffectColor) 7.5px, var(--avatarEffectColor) 15px, White 15px, White 22.5px, var(--avatarEffectColor) 22.5px, var(--avatarEffectColor) 30px);
-    transform: translateX(-20%) translateY(-20%) rotate(-45deg);
-    animation: stripe 20s linear infinite;
+      .effect-3:before {
+    background: repeating-linear-gradient( White 0px, White 15px, var(--avatarEffectColor) 7.5px, var(--avatarEffectColor) 15px, White 15px, White 22.5px, var(--avatarEffectColor) 22.5px, var(--avatarEffectColor) 30px);
+    background: repeating-linear-gradient(white 0px, white 15px, var(--avatarEffectColor) 15px, var(--avatarEffectColor) 30px) 0% 0% / 30px 30px;
     }
     .effect6 {
     border: 2px solid var(--avatarEffectColor);
@@ -321,15 +566,99 @@ themedAvatarEffectsOn " On " <<<EOT
 100% {
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
 }
+}    
+  }
+  if hideEvents {
+    .rbx-platform-event-container .rbx-platform-event-thumbnail {
+        width: 0px;
+        height: 0px;
+    }
+    .rbx-platform-event-container .rbx-platform-event-header {
+        width: 0px;
+        height: 0px;
+    }    
+  }
+  if roproTheme {
+   #wrap::before {
+    content: "";
+    width: 100%;
+    height: 101%;
+    position: fixed;
+    background: transparent !important;
+    background-repeat: repeat !important;
 }
-EOT;
+   .dark-theme {
+    content: "";
+    width: 100%;
+    height: 101%;
+    background: transparent ;
+    background-image: var(--theme-site-backgroundUrl, var(--theme-site-backgroundColor, var(--theme-color-secondary, var(--background)))) !important;
+    background-repeat: repeat !important;
+    background-size: var(--theme-site-backgroundImageSize) !important;
+    background-blend-mode: var(--theme-site-backgroundBlendMode) !important;
+    filter: blur(var(--theme-site-backgroundBlur)) !important;
+    }
+    #roproThemeFrame {
+    left: 0 !important;
+    top: -45px !important;
+    position: absolute !important;
+    border: 0 !important;
+    width: 100% !important;
+    height: 109% !important;
+    z-index: -1 !important;
+    }    
+  }
 }
-@advanced dropdown roproSupport " Ropro Support *Alpha* " {
-roproSupportOff " Off " <<<EOT
 
-EOT;
-roproSupportOn " On *Alpha* " <<<EOT
+@-moz-document url-prefix("https://www.roblox.com/games/") {
 
+if betterGamePage == 1 {
+#wrap::before {
+     z-index: -9999;  
+    }
+    #game-details-carousel-container > div {
+    z-index: -9998;
+    position: fixed;
+    filter: blur(5px);
+    width: 102%;
+    height: 102%;
+    left: -10px !important;
+    top: -10px !important;
+    }
+    #game-details-carousel-container {
+     position: relative;   
+    overflow: overlay;
+    width: 100%;
+    height: 100%;
+    }
+    #game-detail-page > div.col-xs-12.section-content.game-main-content.remove-panel.follow-button-enabled {
+     position: relative;   
+    }   
+    .builder-font .game-main-content .game-calls-to-action {
+     right: 72% !important;   
+    }
+    #playtime-heatmap-section {
+     bottom: 100%;
+    position: absolute;
+    left: 30%;
+    width: 765px;
+    }
+    #store {
+    bottom: 100%;
+    position: absolute;
+    left: 30%;
+    width: 765px;
+    margin-bottom: 8px;
+    }
+}
+}
+
+
+  if roproSupport {
+      
+    
+
+   
 
 @-moz-document url-prefix("https://www.roblox.com/home") {
     
@@ -433,6 +762,50 @@ roproSupportOn " On *Alpha* " <<<EOT
     #serverRegionButtonMini:hover #serverRegionSelector {
     background: var(--primaryColor) !important;   
     }
+    
+      #serverFiltersDropdownBox {
+    background: var(--primaryColor) !important;   
+    }
+    .server-filter-option {
+    background: var(--secondaryColor) !important;   
+    }
+    .dark-theme #playerCountSelector {
+    background: var(--primaryColor) !important;
+    }
+    .dark-theme #maxPlayersList {
+    background: var(--secondaryColor) !important;   
+    }
+    
+    .dark-theme .max-players-selection {
+    background: var(--accentColor) !important;   
+    }
+    #maxPlayersButton > div.filter-tooltip {
+    background: var(--primaryColor) !important;   
+    }
+    #reverseOrderButton > div {
+    background: var(--primaryColor) !important;   
+    }
+    #notFullButton > div {
+    background: var(--primaryColor) !important;   
+    }
+    #randomShuffleButton > div {
+    background: var(--primaryColor) !important;   
+    }
+    #serverRegionButton > div.filter-tooltip {
+    background: var(--primaryColor) !important;   
+    }
+    #bestConnectionButton > div {
+    background: var(--primaryColor) !important;   
+    }
+    #newestServersButton > div {
+    background: var(--primaryColor) !important;   
+    }
+    #oldestServersButton > div{
+    background: var(--primaryColor) !important;   
+    }
+    #serverRegionButton:hover #serverRegionSelector {
+    background: var(--primaryColor) !important;   
+    }
 }
 
 @-moz-document url-prefix("https://www.roblox.com/users/") {
@@ -487,232 +860,38 @@ left: 9999999px !important;
 position: relative !important;
 left: 9999999px !important;
 }
-EOT;
-}
-@advanced dropdown roproTheme " Use Ropro Theme *Alpha* " {
-roproThemeOff " Off " <<<EOT
-
-EOT;
-roproThemeOn " On " <<<EOT
- #wrap::before {
-    content: "";
-    width: 100%;
-    height: 101%;
-    position: fixed;
+  
+@-moz-document url-prefix("https://www.roblox.com/my/avatar") {
+ 
+    #bodySelectorContainer {
+    background-color: var(--primaryColor) !important;   
+    }
+    .dark-theme .wearing-name{
+    width: 0px !important;
+    height: 0px !important;
     background: transparent !important;
-    background-repeat: repeat !important;
-}
-   .dark-theme {
-    content: "";
-    width: 100%;
-    height: 101%;
-    background: transparent ;
-    background-image: var(--theme-site-backgroundUrl, var(--theme-site-backgroundColor, var(--theme-color-secondary, var(--background)))) !important;
-    background-repeat: repeat !important;
-    background-size: var(--theme-site-backgroundImageSize) !important;
-    background-blend-mode: var(--theme-site-backgroundBlendMode) !important;
-    filter: blur(var(--theme-site-backgroundBlur)) !important;
-    }
-    #roproThemeFrame {
-    left: 0 !important;
-    top: -45px !important;
-    position: absolute !important;
-    border: 0 !important;
-    width: 100% !important;
-    height: 109% !important;
-    z-index: -1 !important;
-    }
-
-
-EOT;
-
-}
-
-
-@advanced color avatarEffectMainColor " Main Avatar Effect Color " rgba(0, 0, 0, 0)
-@advanced range sidebarHeight " Floating Sidebar Height " 75
-@advanced range sidebarMargin " Floating Sidebar Top Margin (Pixels) " 65
-@advanced range sidebarMargin2 " Floating Sidebar Left Margin (Pixels) " 10
-@advanced range topbarMargin " Floating Topbar Top Margin (Pixels) " 10
-@advanced range topbarWidth " Floating Topbar Width " 10
-@advanced dropdown hideEvents " Hide Events On Sidebar " {
-hideEventsOff " Off " <<<EOT 
-
-EOT;
-hideEventsOn " On " <<<EOT
-    .rbx-platform-event-container .rbx-platform-event-thumbnail {
-        width: 0px;
-        height: 0px;
-    }
-    .rbx-platform-event-container .rbx-platform-event-header {
-        width: 0px;
-        height: 0px;
-    }
-EOT;
-}
-
-==/UserStyle== */
-
-@-moz-document domain("www.roblox.com") {
-:root{
---avatarImage: url(/*[[avatarImage]]*/);
---sidebarMargin: /*[[sidebarMargin]]*/px;
---sidebarMargin2: /*[[sidebarMargin2]]*/px;
---topbarMargin: /*[[topbarMargin]]*/px;
---topbarWidth: /*[[topbarWidth]]*/px;
---sidebarHeight: /*[[sidebarHeight]]*/%;
---avatarEffectColor: /*[[avatarEffectMainColor]]*/;
---primaryColor: var(--theme-color-primary);
---secondaryColor: var(--theme-color-secondary);
---accentColor: var(--theme-color-third);
---backgroundColor: var(--theme-site-backgroundColor); 
---backgroundImage: var(--theme-site-backgroundUrl); 
-    }
-    /*[[avatarImageStatus]]*/
-    /*[[floatingStatus]]*/
-    /*[[darkOrLight]]*/
-    /*[[betterThemeing]]*/
-    /*[[themedAvatarEffects]]*/
-    /*[[extraFloating]]*/
-    /*[[roproSupport]]*/
-    /*[[roundedUi]]*/
-    /*[[hideEvents]]*/
-    /*[[roproTheme]]*/
-    .dark-theme .icon-default-placeholder, .dark-theme .icon-placeholder-asset, .dark-theme .icon-placeholder-avatar-fullbody, .dark-theme .icon-placeholder-avatar-headshot, .dark-theme .icon-placeholder-game {
-    background: transparent !important;   
-    }
-    #settings-popover-menu {
-    border-radius: 10px !important;
-    }
-    #rogold-badges-container .rogold-badge-item.badge-owned {
-    border: 3px solid #00b95b;
-}
-#rogold-badges-container .rogold-badge-item.badge-unowned {
-    border: 3px solid #ff6969;
-}
-    #react-user-account-base > div.section > img {
-    content: url(https://github.com/IamChplayz/Rgu-Pen/blob/main/Images/ultimate_hub%20X%20RGU%20Penpng.png?raw=true) !important;
-    }
-
-}
-
-
-@-moz-document url-prefix("https://www.roblox.com/users/1827987975/profile") {
-    
-    :Root{
-     --profileAvatarImage: url(https://github.com/IamChplayz/images/blob/main/pfp.png?raw=true);
-     --profileAvatarEffectColor: #5d6bf8;
-     --profileAccentColor: rgba(122, 145, 204, 1);
-    }
- #profile-header-container > div.profile-content > div.avatar > span > img {
-    padding: 50px;
-    background-image: var(--profileAvatarImage) !important;
-    background-size: cover !important;
-    }
-    #navigation > ul > li:nth-child(1) > a > span > span > img {
-     padding: 20px;
-    background-image: var(--profileAvatarImage) !important;
-    background-size: cover !important;   
-    }  
-    .effect2:before {
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    overflow: visible;
-    background: radial-gradient(circle, var(--profileAvatarEffectColor) 0%, var(--profileAccentColor) 100%) 0% 0% / 400%;
-    animation: 20s linear 0s infinite normal none running gradientanimate;
-} 
-.effect2:after {
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    overflow: visible;
-    background: radial-gradient(circle, var(--profileAvatarEffectColor) 0%, var(--profileAccentColor) 100%) 0% 0% / 400%;
-    animation: 20s linear 0s infinite normal none running gradientanimate;
-}
-.effect2 {
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    overflow: visible;
-    background: radial-gradient(circle, var(--profileAvatarEffectColor) 0%, var(--profileAccentColor) 100%) 0% 0% / 400%;
-    animation: 20s linear 0s infinite normal none running gradientanimate;
-}
-     .effect4 {
-    background: linear-gradient(45deg, var(--profileAccentColor) 0%, var(--profileAvatarEffectColor) 100%) !important;
-    }
-    .effect5 {
-        box-shadow: 0 0 10px var(--profileAvatarEffectColor), 0 0 20px var(--profileAvatarEffectColor), 0 0 30px var(--profileAvatarEffectColor), 0 0 40px var(--profileAvatarEffectColor) !important;
-        border: 3px solid 0% var(--profileAvatarEffectColor) !important;
-    }
-    0% {
-    box-shadow: 0 0 5px var(--profileAvatarEffectColor), 0 0 10px var(--profileAvatarEffectColor), 0 0 15px var(--profileAvatarEffectColor), 0 0 20px var(--profileAvatarEffectColor);
-}
-    100% {
-    box-shadow: 0 0 5px var(--profileAvatarEffectColor), 0 0 10px var(--profileAvatarEffectColor), 0 0 20px var(--profileAvatarEffectColor), 0 0 30px var(--profileAvatarEffectColor), 0 0 35px var(--profileAvatarEffectColor);
-}
-    .effect1 {
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    background-color: transparent !important;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    border-top: 3px dashed var(--profileAvatarEffectColor) !important;
-    border-right: 3px dashed var(--profileAvatarEffectColor) !important;
-    border-left: 3px dashed var(--theme-color-primary) !important;
-    border-bottom: 3px dashed var(--theme-color-primary) !important;
-    animation: 10s linear 0s infinite normal none running spin;
-}
-       .spin {
-    z-index: 0;
-    position: absolute;
-    width: 111px;
-    height: 111px;
-    background: #ffffff00;
-    border-radius: 50%;
-    }
-    .effect3 {
-    overflow: hidden;
-    box-sizing: border-box;
-    box-shadow: 0 0 2px var(--avatarEffectColor), 0 0 5px #000, inset 0 0 5px #000;
-    }
-      .effect3::before {
-    content: "";
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: repeating-linear-gradient( White 0%, White 7.5px, var(--avatarEffectColor) 7.5px, var(--avatarEffectColor) 15px, White 15px, White 22.5px, var(--avatarEffectColor) 22.5px, var(--avatarEffectColor) 30px);
-    transform: translateX(-20%) translateY(-20%) rotate(-45deg);
-    animation: stripe 20s linear infinite;
-    }
-    .effect6 {
-    border: 2px solid var(--avatarEffectColor);
-    }
-    @keyframes pulse {
-0% {
-    box-shadow: 0 0 0 0 var(--avatarEffectColor);
-}
-70% {
-    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
-}
-
-100% {
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
-}
+    color: transparent !important;
     }
     
     
+}
+    
+
+}
+
+  
+  
+  
+  
+  
+  
+@-moz-document url-prefix("moz-extension://"), url-prefix("chrome-extension://") {
+       #message-box-contents > div.config-body > label:nth-child(3) > input {
+    --color-off: black !important;
+    --color-on: white !important;
+    color: grey !important;
+   }
     
     
     
 }
-
- /*[[roproSupport]]*/
-
